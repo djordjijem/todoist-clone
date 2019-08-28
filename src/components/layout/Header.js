@@ -15,7 +15,6 @@ function Header() {
             <li>
               <FaPizzaSlice />
             </li>
-            <Sidebar />
           </ul>
         </div>
       </nav>
