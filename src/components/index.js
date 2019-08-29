@@ -1,1 +1,1 @@
-export { Header } from './layout';
+export { Header, Content } from './layout';

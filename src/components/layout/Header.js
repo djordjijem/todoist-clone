@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
-import { Content } from './Content';
 
 function Header() {
   return (
@@ -11,11 +10,12 @@ function Header() {
         </div>
         <div className='settings'>
           <ul>
-            <li>+</li>
-            <li>
+            <li data-testid='quick-add-task-action' className='settings__add'>
+              +
+            </li>
+            <li data-testid='dark-mode-action' className='settings__darkmode'>
               <FaPizzaSlice />
             </li>
-            <Content />
           </ul>
         </div>
       </nav>

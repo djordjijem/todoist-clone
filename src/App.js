@@ -1,11 +1,17 @@
 import React from 'react';
-import { Header } from './components';
+import { Header, Content } from './components';
+import { ProjectsProvider, SelectedProjectProvider } from './context';
 
 function App() {
   return (
-    <div className='App'>
-      <Header />
-    </div>
+    <SelectedProjectProvider>
+      <ProjectsProvider>
+        <div className='App'>
+          <Header />
+          <Content />
+        </div>
+      </ProjectsProvider>
+    </SelectedProjectProvider>
   );
 }
 
