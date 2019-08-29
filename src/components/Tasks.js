@@ -1,8 +1,9 @@
 import React from 'react';
 import { Checkbox } from './Checkbox';
+import { useTasks } from '../hooks';
 
 function Tasks() {
-  const tasks = [];
+  const { tasks } = useTasks(1);
 
   const projectName = '';
 

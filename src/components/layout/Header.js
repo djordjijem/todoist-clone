@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
-import { Sidebar } from './Sidebar';
+import { Content } from './Content';
 
 function Header() {
   return (
@@ -15,6 +15,7 @@ function Header() {
             <li>
               <FaPizzaSlice />
             </li>
+            <Content />
           </ul>
         </div>
       </nav>

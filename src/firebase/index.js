@@ -8,7 +8,7 @@ import {
   STORAGE_BUCKET,
   MESSAGING_SENDER_ID,
   APP_ID
-} from '../../keys';
+} from '../keys';
 
 const firebaseConfig = firebase.initializeApp({
   apiKey: API_KEY,

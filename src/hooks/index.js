@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { firebase } from '../firebase';
 import { collatedTasksExist } from '../helpers';
 import moment from 'moment';
-import { USER_ID } from '../../keys';
+import { USER_ID } from '../keys';
 
 function useTasks(selectedProject) {
   const [tasks, setTasks] = useState([]);
@@ -17,7 +17,7 @@ function useTasks(selectedProject) {
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
         ? (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
-        : selectedProject === 'Today'
+        : selectedProject === 'TODAY'
         ? (unsubscribe = unsubscribe.where(
             'date',
             '==',
@@ -29,7 +29,7 @@ function useTasks(selectedProject) {
 
     unsubscribe = unsubscribe.onSnapshot(snapshot => {
       const newTasks = snapshot.docs.map(task => ({
-        id: task.id,
+        id: task.projectId,
         ...task.data()
       }));
 
@@ -42,7 +42,6 @@ function useTasks(selectedProject) {
             )
           : newTasks.filter(task => task.archived !== true)
       );
-
       setArchivedTasks(newTasks.filter(task => task.archived !== false));
     });
 
@@ -77,3 +76,5 @@ function useProjects() {
 
   return { projects, setProjects };
 }
+
+export { useTasks, useProjects };
