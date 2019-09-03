@@ -3,7 +3,7 @@ import { Checkbox } from './Checkbox';
 import { useTasks } from '../hooks';
 
 function Tasks() {
-  const { tasks } = useTasks(1);
+  const { tasks } = useTasks(null);
 
   const projectName = '';
 
