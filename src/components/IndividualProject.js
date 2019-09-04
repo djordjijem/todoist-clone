@@ -9,7 +9,7 @@ function IndividualProject({ project }) {
   const { projects, setProjects } = useProjectsValue();
   const { setSelectedProject } = useSelectedProjectValue();
 
-  const deleteProject = docId => {
+  function deleteProject(docId) {
     firebase
       .firestore()
       .collection('projects')
@@ -19,7 +19,7 @@ function IndividualProject({ project }) {
         setProjects([...projects]);
         setSelectedProject('INBOX');
       });
-  };
+  }
 
   return (
     <>

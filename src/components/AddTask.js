@@ -23,7 +23,7 @@ function AddTask({
 
   const { selectedProject } = useSelectedProjectValue();
 
-  const addTask = () => {
+  function addTask() {
     const projectId = project || selectedProject;
     let collatedDate = '';
 
@@ -55,7 +55,7 @@ function AddTask({
           setShowProjectOverlay(false);
         })
     );
-  };
+  }
 
   return (
     <div

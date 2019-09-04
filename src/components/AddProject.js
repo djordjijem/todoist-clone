@@ -12,21 +12,22 @@ function AddProject({ shouldShow = false }) {
   const projectId = generatePushId();
   const { projects, setProjects } = useProjectsValue();
 
-  const addProject = () =>
+  function addProject() {
     projectName &&
-    firebase
-      .firestore()
-      .collection('projects')
-      .add({
-        projectId,
-        name: projectName,
-        userId: USER_ID
-      })
-      .then(() => {
-        setProjects([...projects]);
-        setProjectName('');
-        setShow(false);
-      });
+      firebase
+        .firestore()
+        .collection('projects')
+        .add({
+          projectId,
+          name: projectName,
+          userId: USER_ID
+        })
+        .then(() => {
+          setProjects([...projects]);
+          setProjectName('');
+          setShow(false);
+        });
+  }
 
   return (
     <div className='add-project' data-testid='add-project'>
