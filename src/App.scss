@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 // General Settings
 html {
@@ -19,6 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #202020;
   background-color: #fafafa;
+  font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -461,7 +462,7 @@ header {
 }
 
 /* Tasks
-    ============================================ */
+  ============================================ */
 .tasks {
   width: 656px;
   background-color: white;
